@@ -1,0 +1,8 @@
+<mvc:View   controllerName="pruebapp.sapui5.controller.App"
+            xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc" id="_IDGenView1">
+    <m:Button id="idButton" text="{i18n>showHelloButtonText}" press=".onShowHello"></m:Button>
+    <m:Input id="idInput" value="{/recipient/name}"
+             valueLiveUpdate="true"
+             description="Hello {/recipient/name}"
+             width="60%"></m:Input>
+</mvc:View>
