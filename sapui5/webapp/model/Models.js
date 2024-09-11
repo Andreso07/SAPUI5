@@ -3,25 +3,21 @@ sap.ui.define([
 ],
 
     /**
-     * 
-     * @param {typeof sap/ui/model/JSONModel} JSONModel
+     * @param {typeof sap.ui.model.json.JSONModel} JSONModel
      */
+
     function (JSONModel) {
         "use strict";
 
         return {
             createRecipient: function () {
-                var onData = {
+                var oData = {
                     recipient: {
-                        name: "World!"
+                        name: "World"
                     }
-                };
-
-                return new JSONModel(onData);
-               
+                }
+                return new JSONModel(oData)
             }
         }
 
-
-    }
-);
+    });

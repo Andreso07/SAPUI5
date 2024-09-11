@@ -1,35 +1,38 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast",
-
-
+    "sap/ui/core/Fragment"
 ],
 
     /**
-     * 
-     * @param {typeof sap.ui.core.mvc.Controller} Controller 
+     * @param {typeof sap.ui.core.mvc.Controller} Controller
      * @param {typeof sap.m.MessageToast} MessageToast
-     * @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
-     * 
+     * @param {typeof sap.ui.core.Fragment} Fragment
      */
-    function (Controller, MessageToast, Models, ResourceModel) {
+
+    function (Controller, MessageToast, Fragment) {
         "use strict";
 
         return Controller.extend("pruebapp.sapui5.controller.App", {
 
             onInit: function() {
-
               
-                
             },
             onShowHello: function () {
-                //read text from i18n model
-                var oBundle = this.getView().getModel("i18n").getResourceBundle();
-                //read property 
-                var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-                var sMsg= oBundle.getText("helloMsg", [sRecipient]);
-                MessageToast.show(sMsg);
-            }
-        });
+                
+            },
+            onOpenDialog: function () {
+                
 
-    });
+            },
+            onCloseDialog: function() {
+                this.byId("idDialog").close();
+            },
+
+            onOpenDialogHeader: function () {
+                this.getOwnerComponent().openHelloDialog();
+            }
+
+        });
+    }
+
+);
